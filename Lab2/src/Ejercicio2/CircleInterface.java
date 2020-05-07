@@ -7,4 +7,6 @@ package Ejercicio2;
  */
 public interface CircleInterface {
     
+    Circle newCircle(int radius, int x, int y);
+    
 }
