@@ -5,30 +5,34 @@ package Ejercicio2;
  * @author Hansy Gonzalez
  * @author Marcell Granados
  */
-public class Circle {
+public class Circle extends CoordinatesFigures {
+
     int radius;
-    int x;
-    int y;
 
     public Circle() {
     }
 
-    public Circle(int radius, int x, int y) {
+    public Circle(Coordinates c, int radius) {
+        super(c);
         this.radius = radius;
-        this.x = x;
-        this.y = y;
     }
 
-    public int getRadius() {return radius;}
-    public void setRadius(int radius) {this.radius = radius;}
-    public int getX() {return x;}
-    public void setX(int x) {this.x = x;}
-    public int getY() {return y;}
-    public void setY(int y) {this.y = y;}
+    public int getRadius() {
+        return radius;
+    }
+
+    public void setRadius(int radius) {
+        this.radius = radius;
+    }
 
     @Override
     public String toString() {
-        return "Circle{" + "radius=" + radius + ", x=" + x + ", y=" + y + '}';
+        return "Circulo{" + "Radio=" + radius + super.toString() + '}';
     }
-    
+
+    @Override
+    public Object copy() {
+        return new Circle((Coordinates) super.getC(), radius);
+    }
+
 }
