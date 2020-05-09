@@ -11,21 +11,21 @@ public class Main {
         FactoryInterface rectangleFactory = new RectangleFactory();
         FactoryInterface circleFactory = new CircleFactory();
         
-        CoordinatesFigures circle1 = circleFactory.newFigure(new Coordinates(50, 60), 20);
+        Figures circle1 = circleFactory.newFigure(new Coordinates(50, 60), 20);
         Circle circle2 = (Circle) circle1.copy();
         circle2.setRadius(500);
         
-        CoordinatesFigures rectangle1 = rectangleFactory.newFigure(new Coordinates(50, 60), 20, 30);
+        Figures rectangle1 = rectangleFactory.newFigure(new Coordinates(50, 60), 20, 30);
 
         System.out.println(circle1.toString());
         System.out.println(circle2.toString());
         System.out.println(rectangle1.toString());
 
         // PRUEBA FIGURA MIXTA
-        CoordinatesFigures circle3 = circleFactory.newFigure(new Coordinates(50, 60), 20);
-        CoordinatesFigures rectangle2 = rectangleFactory.newFigure(new Coordinates(50, 60), 20, 30);
-        CoordinatesFigures circle4 = circleFactory.newFigure(new Coordinates(50, 70), 20);
-        CoordinatesFigures rectangle3 = rectangleFactory.newFigure(new Coordinates(50, 70), 20, 30);
+        Figures circle3 = circleFactory.newFigure(new Coordinates(50, 60), 20);
+        Figures rectangle2 = rectangleFactory.newFigure(new Coordinates(50, 60), 20, 30);
+        Figures circle4 = circleFactory.newFigure(new Coordinates(50, 70), 20);
+        Figures rectangle3 = rectangleFactory.newFigure(new Coordinates(50, 70), 20, 30);
 
         MixtedFigure mf = new MixtedFigure();
         mf.addFigure(circle3);

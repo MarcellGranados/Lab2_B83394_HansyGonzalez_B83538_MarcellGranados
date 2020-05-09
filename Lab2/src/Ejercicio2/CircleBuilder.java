@@ -17,18 +17,18 @@ public class CircleBuilder implements BuilderInterface {
     @Override
     public void newCoordinated(Coordinates c) {
         if (c.getX() >= 0 && c.getY() >= 0) {
-            circle.setC(c);
+            circle.setCoordinates(c);
         }
     }
 
     public void newRadius(int radius) {
-        if (radius >= 0 && (circle.getC().getX() - radius) >= 0 && (circle.getC().getY() - radius) >= 0) {
+        if (radius >= 0 && (circle.getCoordinates().getX() - radius) >= 0 && (circle.getCoordinates().getY() - radius) >= 0) {
             circle.setRadius(radius);
         }
     }
 
     @Override
-    public CoordinatesFigures getFigureCreated() {
+    public Figures getFigureCreated() {
         return circle;
     }
 

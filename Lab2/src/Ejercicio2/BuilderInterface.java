@@ -11,5 +11,5 @@ public interface BuilderInterface {
 
     void newCoordinated(Coordinates c) throws PersonalizedException;
 
-    CoordinatesFigures getFigureCreated() throws PersonalizedException;
+    Figures getFigureCreated() throws PersonalizedException;
 }

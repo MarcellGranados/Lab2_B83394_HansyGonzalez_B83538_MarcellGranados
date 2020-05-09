@@ -7,7 +7,7 @@ package Ejercicio2;
  */
 public class MainBuilder {
 
-    public CoordinatesFigures newCircle(Coordinates c, int radius) {
+    public Figures newCircle(Coordinates c, int radius) {
         CircleBuilder cb = new CircleBuilder();
         cb.newFigure();
         cb.newCoordinated(c);
@@ -15,12 +15,12 @@ public class MainBuilder {
         return cb.getFigureCreated();
     }
     
-    public CoordinatesFigures newRectangle(Coordinates c, int high, int width) {
-        RectangleBuilder cb = new RectangleBuilder();
-        cb.newFigure();
-        cb.newCoordinated(c);
-        cb.newHigh(high);
-        cb.newWidth(width);
-        return cb.getFigureCreated();
+    public Figures newRectangle(Coordinates c, int high, int width) {
+        RectangleBuilder rb = new RectangleBuilder();
+        rb.newFigure();
+        rb.newCoordinated(c);
+        rb.newHigh(high);
+        rb.newWidth(width);
+        return rb.getFigureCreated();
     }
 }

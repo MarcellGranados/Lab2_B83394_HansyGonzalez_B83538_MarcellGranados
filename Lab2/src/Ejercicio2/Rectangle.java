@@ -5,7 +5,7 @@ package Ejercicio2;
  * @author Hansy Gonzalez
  * @author Marcell Granados
  */
-public class Rectangle extends CoordinatesFigures {
+public class Rectangle extends Figures {
 
     int high;
     int width;
@@ -42,7 +42,7 @@ public class Rectangle extends CoordinatesFigures {
 
     @Override
     public Object copy() {
-        return new Rectangle((Coordinates) super.getC(), high, width);
+        return new Rectangle((Coordinates) super.getCoordinates(), high, width);
     }
 
 }

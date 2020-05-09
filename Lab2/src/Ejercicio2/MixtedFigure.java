@@ -8,30 +8,30 @@ import java.util.Iterator;
  * @author Marcell Granados
  */
 public class MixtedFigure {
-    ArrayList<CoordinatesFigures> list = new ArrayList<>();
+    ArrayList<Figures> list = new ArrayList<>();
 
     public MixtedFigure() {
     }
     
-    public MixtedFigure(ArrayList<CoordinatesFigures> list) {
+    public MixtedFigure(ArrayList<Figures> list) {
         this.list = list;
     }
     
-    public void addFigure(CoordinatesFigures figure){
+    public void addFigure(Figures figure){
         list.add(figure);
     }
     
-    public void deleteFigure(CoordinatesFigures figure){
+    public void deleteFigure(Figures figure){
         list.remove(figure);
     }
     
-    public CoordinatesFigures getFigure(int i){
-        return (CoordinatesFigures)list.get(i).copy();
+    public Figures getFigure(int i){
+        return (Figures)list.get(i).copy();
     }
     
     public String getInformation() {
         String figureInformation = "";
-        Iterator<CoordinatesFigures> it = list.iterator();
+        Iterator<Figures> it = list.iterator();
         while (it.hasNext()) {
             figureInformation += "\n";
             figureInformation += it.next().toString();

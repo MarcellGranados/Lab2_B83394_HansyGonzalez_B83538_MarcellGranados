@@ -7,5 +7,5 @@ package Ejercicio2;
  */
 public interface FactoryInterface {
 
-    CoordinatesFigures newFigure(Coordinates c, int... num);
+    Figures newFigure(Coordinates c, int... num);
 }

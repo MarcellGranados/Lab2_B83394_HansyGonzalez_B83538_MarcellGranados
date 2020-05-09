@@ -17,24 +17,24 @@ public class RectangleBuilder implements BuilderInterface {
     @Override
     public void newCoordinated(Coordinates c) {
         if (c.getX() >= 0 && c.getY() >= 0) {
-            rectangle.setC(c);
+            rectangle.setCoordinates(c);
         }
     }
 
     public void newHigh(int high) {
-        if (high >= 0 && (rectangle.getC().getX() - high) >= 0 && (rectangle.getC().getY() - high) >= 0) {
+        if (high >= 0 && (rectangle.getCoordinates().getX() - high) >= 0 && (rectangle.getCoordinates().getY() - high) >= 0) {
             rectangle.setHigh(high);
         }
     }
 
     public void newWidth(int width) {
-        if (width >= 0 && (rectangle.getC().getX() - width) >= 0 && (rectangle.getC().getY() - width) >= 0) {
+        if (width >= 0 && (rectangle.getCoordinates().getX() - width) >= 0 && (rectangle.getCoordinates().getY() - width) >= 0) {
             rectangle.setWidth(width);
         }
     }
 
     @Override
-    public CoordinatesFigures getFigureCreated() {
+    public Figures getFigureCreated() {
         return rectangle;
     }
 

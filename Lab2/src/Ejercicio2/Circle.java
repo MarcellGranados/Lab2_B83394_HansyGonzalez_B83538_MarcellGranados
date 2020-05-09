@@ -5,7 +5,7 @@ package Ejercicio2;
  * @author Hansy Gonzalez
  * @author Marcell Granados
  */
-public class Circle extends CoordinatesFigures {
+public class Circle extends Figures {
 
     int radius;
 
@@ -32,7 +32,7 @@ public class Circle extends CoordinatesFigures {
 
     @Override
     public Object copy() {
-        return new Circle((Coordinates) super.getC(), radius);
+        return new Circle((Coordinates) super.getCoordinates(), radius);
     }
 
 }

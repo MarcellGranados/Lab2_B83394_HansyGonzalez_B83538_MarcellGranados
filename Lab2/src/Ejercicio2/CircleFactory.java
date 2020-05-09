@@ -8,7 +8,7 @@ package Ejercicio2;
 public class CircleFactory implements FactoryInterface {
 
     @Override
-    public CoordinatesFigures newFigure(Coordinates c, int... num) {
+    public Figures newFigure(Coordinates c, int... num) {
         return new Circle(c, num[0]);
     }
 
