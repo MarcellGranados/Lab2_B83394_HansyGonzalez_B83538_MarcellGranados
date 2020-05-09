@@ -40,7 +40,7 @@ public class Coordinates implements Copyable {
     }
 
     @Override
-    public Object copy() {
+    public Copyable copy() {
         return new Coordinates(x, y);
     }
 }
