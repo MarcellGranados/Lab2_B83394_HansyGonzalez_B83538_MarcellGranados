@@ -8,30 +8,33 @@ package Ejercicio2;
 public class Main {
 
     public static void main(String[] args) throws PersonalizedException {
-        CoordinatesFigures c1 = new MainBuilder().newCircle(new Coordinates(50, 60), 20);
-        Circle c2 = (Circle) c1.copy();
-        c2.setRadius(500);
+        FactoryInterface rectangleFactory = new RectangleFactory();
+        FactoryInterface circleFactory = new CircleFactory();
+        
+        CoordinatesFigures circle1 = circleFactory.newFigure(new Coordinates(50, 60), 20);
+        Circle circle2 = (Circle) circle1.copy();
+        circle2.setRadius(500);
+        
+        CoordinatesFigures rectangle1 = rectangleFactory.newFigure(new Coordinates(50, 60), 20, 30);
 
-        CoordinatesFigures r1 = new MainBuilder().newRectangle(new Coordinates(50, 60), 20, 30);
-
-        System.out.println(c1.toString());
-        System.out.println(c2.toString());
-        System.out.println(r1.toString());
+        System.out.println(circle1.toString());
+        System.out.println(circle2.toString());
+        System.out.println(rectangle1.toString());
 
         // PRUEBA FIGURA MIXTA
-        CoordinatesFigures c3 = new MainBuilder().newCircle(new Coordinates(50, 60), 20);
-        CoordinatesFigures c4 = new MainBuilder().newRectangle(new Coordinates(50, 60), 20, 30);
-        CoordinatesFigures c5 = new MainBuilder().newCircle(new Coordinates(50, 70), 20);
-        CoordinatesFigures c6 = new MainBuilder().newRectangle(new Coordinates(50, 70), 20, 30);
+        CoordinatesFigures circle3 = circleFactory.newFigure(new Coordinates(50, 60), 20);
+        CoordinatesFigures rectangle2 = rectangleFactory.newFigure(new Coordinates(50, 60), 20, 30);
+        CoordinatesFigures circle4 = circleFactory.newFigure(new Coordinates(50, 70), 20);
+        CoordinatesFigures rectangle3 = rectangleFactory.newFigure(new Coordinates(50, 70), 20, 30);
 
         MixtedFigure mf = new MixtedFigure();
-        mf.addFigure(c3);
-        mf.addFigure(c4);
+        mf.addFigure(circle3);
+        mf.addFigure(rectangle2);
         System.out.println("\nFigura Mixta 1:" + mf.getInformation());
 
         MixtedFigure mf2 = new MixtedFigure(mf.list);
-        mf.addFigure(c5);
-        mf.addFigure(c6);
+        mf.addFigure(circle4);
+        mf.addFigure(rectangle3);
         System.out.println("\nFigura Mixta 2:" + mf2.getInformation());
     }
 

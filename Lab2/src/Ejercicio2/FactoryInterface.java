@@ -6,6 +6,6 @@ package Ejercicio2;
  * @author Marcell Granados
  */
 public interface FactoryInterface {
-    
-    CoordinatesFigures newFigure();
+
+    CoordinatesFigures newFigure(Coordinates c, int... num);
 }
