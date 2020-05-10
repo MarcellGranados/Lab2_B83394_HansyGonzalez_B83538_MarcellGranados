@@ -5,15 +5,15 @@ package Ejercicio2;
  * @author Hansy Gonzalez
  * @author Marcell Granados
  */
-public class Coordinates implements Copyable {
+public class Point implements Copyable {
 
     int x;
     int y;
 
-    public Coordinates() {
+    public Point() {
     }
 
-    public Coordinates(int x, int y) {
+    public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -41,6 +41,6 @@ public class Coordinates implements Copyable {
 
     @Override
     public Copyable copy() {
-        return new Coordinates(x, y);
+        return new Point(x, y);
     }
 }

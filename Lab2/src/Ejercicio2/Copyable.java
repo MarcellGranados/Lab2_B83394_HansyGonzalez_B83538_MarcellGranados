@@ -7,6 +7,6 @@ package Ejercicio2;
  */
 public interface Copyable {
 
-    public Object copy();
+    public Copyable copy();
 
 }

@@ -5,7 +5,7 @@ package Ejercicio2;
  * @author Hansy Gonzalez
  * @author Marcell Granados
  */
-public class Rectangle extends Figures {
+public class Rectangle extends Figure {
 
     int high;
     int width;
@@ -13,7 +13,7 @@ public class Rectangle extends Figures {
     public Rectangle() {
     }
 
-    public Rectangle(Coordinates c, int high, int width) {
+    public Rectangle(Point c, int high, int width) {
         super(c);
         this.high = high;
         this.width = width;
@@ -41,8 +41,13 @@ public class Rectangle extends Figures {
     }
 
     @Override
-    public Object copy() {
-        return new Rectangle((Coordinates) super.getCoordinates(), high, width);
+    public MuralComponent copy() {
+        return new Rectangle((Point) getPoint().copy(), high, width);
+    }
+
+    @Override
+    public String informationFigure() {
+        return toString();
     }
 
 }

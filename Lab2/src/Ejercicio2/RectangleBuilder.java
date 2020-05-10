@@ -5,7 +5,7 @@ package Ejercicio2;
  * @author Hansy Gonzalez
  * @author Marcell Granados
  */
-public class RectangleBuilder implements BuilderInterface {
+public class RectangleBuilder implements AbstractBuilder {
 
     Rectangle rectangle;
 
@@ -15,26 +15,26 @@ public class RectangleBuilder implements BuilderInterface {
     }
 
     @Override
-    public void newCoordinated(Coordinates c) {
+    public void newCoordinated(Point c) {
         if (c.getX() >= 0 && c.getY() >= 0) {
-            rectangle.setCoordinates(c);
+            rectangle.setPoint(c);
         }
     }
 
     public void newHigh(int high) {
-        if (high >= 0 && (rectangle.getCoordinates().getX() - high) >= 0 && (rectangle.getCoordinates().getY() - high) >= 0) {
+        if (high >= 0 && (rectangle.getPoint().getX() - high) >= 0 && (rectangle.getPoint().getY() - high) >= 0) {
             rectangle.setHigh(high);
         }
     }
 
     public void newWidth(int width) {
-        if (width >= 0 && (rectangle.getCoordinates().getX() - width) >= 0 && (rectangle.getCoordinates().getY() - width) >= 0) {
+        if (width >= 0 && (rectangle.getPoint().getX() - width) >= 0 && (rectangle.getPoint().getY() - width) >= 0) {
             rectangle.setWidth(width);
         }
     }
 
     @Override
-    public Figures getFigureCreated() {
+    public Figure getFigureCreated() {
         return rectangle;
     }
 

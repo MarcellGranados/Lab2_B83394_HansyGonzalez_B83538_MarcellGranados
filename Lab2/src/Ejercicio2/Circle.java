@@ -5,14 +5,14 @@ package Ejercicio2;
  * @author Hansy Gonzalez
  * @author Marcell Granados
  */
-public class Circle extends Figures {
+public class Circle extends Figure {
 
     int radius;
 
     public Circle() {
     }
 
-    public Circle(Coordinates c, int radius) {
+    public Circle(Point c, int radius) {
         super(c);
         this.radius = radius;
     }
@@ -31,8 +31,13 @@ public class Circle extends Figures {
     }
 
     @Override
-    public Object copy() {
-        return new Circle((Coordinates) super.getCoordinates(), radius);
+    public MuralComponent copy() {
+        return new Circle((Point) getPoint().copy(), radius);
+    }
+
+    @Override
+    public String informationFigure() {
+        return toString();
     }
 
 }

@@ -5,9 +5,9 @@ package Ejercicio2;
  * @author Hansy Gonzalez
  * @author Marcell Granados
  */
-public class MainBuilder {
+public class Builder {
 
-    public Figures newCircle(Coordinates c, int radius) {
+    public Figure newCircle(Point c, int radius) {
         CircleBuilder cb = new CircleBuilder();
         cb.newFigure();
         cb.newCoordinated(c);
@@ -15,7 +15,7 @@ public class MainBuilder {
         return cb.getFigureCreated();
     }
     
-    public Figures newRectangle(Coordinates c, int high, int width) {
+    public Figure newRectangle(Point c, int high, int width) {
         RectangleBuilder rb = new RectangleBuilder();
         rb.newFigure();
         rb.newCoordinated(c);

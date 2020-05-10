@@ -8,7 +8,7 @@ package Ejercicio2;
 public class RectangleFactory implements FactoryInterface {
 
     @Override
-    public Figures newFigure(Coordinates c, int... num) {
+    public Figure newFigure(Point c, int... num) {
         return new Rectangle(c, num[0], num[1]);
     }
 
