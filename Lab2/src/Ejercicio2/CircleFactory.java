@@ -7,9 +7,11 @@ package Ejercicio2;
  */
 public class CircleFactory implements FactoryInterface {
 
+    private Builder builder = new Builder();
+
     @Override
-    public Figure newFigure(Point c, int... num) {
-        return new Circle(c, num[0]);
+    public Figure newFigure(Point point, int... num) throws PersonalizedException {
+        return builder.newCircle(point, num[0]);
     }
 
 }

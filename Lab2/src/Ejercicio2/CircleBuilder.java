@@ -15,14 +15,14 @@ public class CircleBuilder implements AbstractBuilder {
     }
 
     @Override
-    public void newCoordinated(Point c) {
+    public void newPoint(Point c) {
         if (c.getX() >= 0 && c.getY() >= 0) {
             circle.setPoint(c);
         }
     }
 
     public void newRadius(int radius) {
-        if (radius >= 0 && (circle.getPoint().getX() - radius) >= 0 && (circle.getPoint().getY() - radius) >= 0) {
+        if (radius > 0 && (circle.getPoint().getX() - radius) >= 0 && (circle.getPoint().getY() - radius) >= 0) {
             circle.setRadius(radius);
         }
     }

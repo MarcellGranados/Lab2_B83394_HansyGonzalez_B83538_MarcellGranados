@@ -5,28 +5,30 @@ import java.util.Iterator;
 
 /**
  *
+ * @author Hansy Gonzalez
  * @author Marcell Granados
  */
-public class MixedFigure implements MuralComponent{
+public class MixedFigure implements MuralComponent {
+
     ArrayList<MuralComponent> list;
 
     public MixedFigure() {
         list = new ArrayList<>();
     }
-    
+
     public MixedFigure(ArrayList<MuralComponent> list) {
         this.list = list;
     }
-    
-    public void addFigure(MuralComponent figure){
+
+    public void addFigure(MuralComponent figure) {
         list.add(figure);
     }
-    
-    public void deleteFigure(MuralComponent figure){
+
+    public void deleteFigure(MuralComponent figure) {
         list.remove(figure);
     }
-    
-    public MuralComponent getFigure(int i){
+
+    public MuralComponent getFigure(int i) {
         return list.get(i);
     }
 
@@ -45,10 +47,10 @@ public class MixedFigure implements MuralComponent{
     public MixedFigure copy() {
         ArrayList<MuralComponent> temp = new ArrayList<>();
         Iterator<MuralComponent> it = list.iterator();
-        while (it.hasNext()) {            
-            temp.add((MuralComponent)it.next().copy());
+        while (it.hasNext()) {
+            temp.add((MuralComponent) it.next().copy());
         }
         return new MixedFigure(temp);
     }
-    
+
 }

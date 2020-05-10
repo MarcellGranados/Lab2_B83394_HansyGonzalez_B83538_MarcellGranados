@@ -7,20 +7,43 @@ package Ejercicio2;
  */
 public class Builder {
 
-    public Figure newCircle(Point c, int radius) {
+    public Figure newCircle(Point c, int radius) throws PersonalizedException {
         CircleBuilder cb = new CircleBuilder();
         cb.newFigure();
-        cb.newCoordinated(c);
+        cb.newPoint(c);
         cb.newRadius(radius);
+        String s = "";
+        if (cb.circle.radius == 0) {
+            s += " un radio valido";
+        }
+        if (cb.circle.getPoint() == null) {
+            s += " unas coordenadas validas";
+        }
+        if (s != "") {
+            throw new PersonalizedException("El circulo debe de poseer:" + s);
+        }
         return cb.getFigureCreated();
     }
-    
-    public Figure newRectangle(Point c, int high, int width) {
+
+    public Figure newRectangle(Point point, int high, int width) throws PersonalizedException {
         RectangleBuilder rb = new RectangleBuilder();
         rb.newFigure();
-        rb.newCoordinated(c);
+        rb.newPoint(point);
         rb.newHigh(high);
         rb.newWidth(width);
+        String s = "";
+        if (rb.rectangle.high == 0) {
+            s += " una altura valida";
+        }
+        if (rb.rectangle.width == 0) {
+            s += " una anchura valida";
+        }
+        if (rb.rectangle.getPoint() == null) {
+            s += " unas coordenadas validas";
+        }
+        if (s != "") {
+            throw new PersonalizedException("El rectangulo debe de poseer:" + s);
+        }
         return rb.getFigureCreated();
     }
 }

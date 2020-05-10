@@ -7,5 +7,5 @@ package Ejercicio2;
  */
 public interface FactoryInterface {
 
-    Figure newFigure(Point c, int... num);
+    Figure newFigure(Point c, int... num)throws PersonalizedException;
 }

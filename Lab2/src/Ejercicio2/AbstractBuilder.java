@@ -9,7 +9,7 @@ public interface AbstractBuilder {
 
     void newFigure();
 
-    void newCoordinated(Point c) throws PersonalizedException;
+    void newPoint(Point c);
 
-    Figure getFigureCreated() throws PersonalizedException;
+    Figure getFigureCreated();
 }

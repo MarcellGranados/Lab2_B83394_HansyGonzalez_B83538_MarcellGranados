@@ -7,9 +7,11 @@ package Ejercicio2;
  */
 public class RectangleFactory implements FactoryInterface {
 
+    private Builder builder = new Builder();
+
     @Override
-    public Figure newFigure(Point c, int... num) {
-        return new Rectangle(c, num[0], num[1]);
+    public Figure newFigure(Point point, int... num) throws PersonalizedException {
+        return builder.newRectangle(point, num[0], num[1]);
     }
 
 }
