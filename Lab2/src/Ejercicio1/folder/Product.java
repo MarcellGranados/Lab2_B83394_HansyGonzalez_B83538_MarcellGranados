@@ -1,9 +1,12 @@
+package Ejercicio1.folder;
+
 /**
  *
  * @author Hansy Gonzalez
  * @author Marcell Granados
  */
 public class Product {
+
     private String code;
     private int quantity;
     private double weight;
@@ -45,8 +48,8 @@ public class Product {
     public String toString() {
         return "Producto (" + "codigo: " + code + ", cantidad: " + quantity + ", peso unitario: " + weight + ')';
     }
-    
-    public double calcGeneralWeight(){
-        return quantity*weight;
+
+    public double calcGeneralWeight() {
+        return quantity * weight;
     }
 }

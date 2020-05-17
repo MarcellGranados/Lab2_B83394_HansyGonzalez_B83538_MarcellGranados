@@ -1,3 +1,5 @@
+package Ejercicio1.folder;
+
 /**
  *
  * @author Hansy Gonzalez
@@ -9,7 +11,7 @@ public enum StatusEnum {
     DISPATCH_WAITING("En espera para ser despachado", IN_TRANSIT),
     PROCESSING("En procesamiento", DISPATCH_WAITING),
     PROCESS_WAITING("En espera de ser procesado", PROCESSING);
-    
+
     private final String description;
     private final StatusEnum next;
 
@@ -26,8 +28,8 @@ public enum StatusEnum {
         return next;
     }
 
-    public boolean hasNext(){
+    public boolean hasNext() {
         return next != null;
     }
-    
+
 }

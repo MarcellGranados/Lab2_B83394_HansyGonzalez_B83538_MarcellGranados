@@ -1,10 +1,15 @@
+package Ejercicio1.folder;
+
+import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
+
 /**
  *
  * @author Hansy Gonzalez
  * @author Marcell Granados
  */
 public class Status {
+
     private StatusEnum status;
     private GregorianCalendar date;
 
@@ -31,10 +36,11 @@ public class Status {
 
     @Override
     public String toString() {
-        return "Status{" + "status=" + status + ", date=" + date + '}';
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yy – mm:ss:S");
+        return "Estado: " + status.getDescription() + ", fecha: " + dateFormat.format(date.getTime());
     }
 
-    public boolean updateStatus(){
+    public boolean updateStatus() {
         status = status.getNext();
         date = new GregorianCalendar();
         return status.hasNext();
